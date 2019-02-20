@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.EFCore.Models", "V
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.EFCore.IServices", "Vavatech.EFCore.IServices\Vavatech.EFCore.IServices.csproj", "{AF85D9F9-10E9-4360-A77F-3FD680FE8EA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.EFCore.DbServices", "Vavatech.EFCore.DbServices\Vavatech.EFCore.DbServices.csproj", "{3A70D9F1-5A78-41ED-AC6D-07F2D2E68AEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AF85D9F9-10E9-4360-A77F-3FD680FE8EA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF85D9F9-10E9-4360-A77F-3FD680FE8EA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF85D9F9-10E9-4360-A77F-3FD680FE8EA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A70D9F1-5A78-41ED-AC6D-07F2D2E68AEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A70D9F1-5A78-41ED-AC6D-07F2D2E68AEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A70D9F1-5A78-41ED-AC6D-07F2D2E68AEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A70D9F1-5A78-41ED-AC6D-07F2D2E68AEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
