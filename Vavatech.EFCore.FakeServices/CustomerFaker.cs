@@ -16,6 +16,8 @@ namespace Vavatech.EFCore.FakeServices
             RuleFor(p => p.FirstName, f => f.Person.FirstName);
             RuleFor(p => p.LastName, f => f.Person.LastName);
             RuleFor(p => p.IsDeleted, f => f.Random.Bool(0.8f));
+            Ignore(p => p.Pesel);
+            Ignore(p => p.Salary);
             
         }
     }

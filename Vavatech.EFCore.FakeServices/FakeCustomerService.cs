@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Vavatech.EFCore.IServices;
 using Vavatech.EFCore.Models;
+using Vavatech.EFCore.Models.SearchCritieras;
 
 namespace Vavatech.EFCore.FakeServices
 {
@@ -39,6 +40,11 @@ namespace Vavatech.EFCore.FakeServices
         }
 
         public void Update(Customer customer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Customer> Get(CustomerSearchCriteria criteria)
         {
             throw new NotImplementedException();
         }

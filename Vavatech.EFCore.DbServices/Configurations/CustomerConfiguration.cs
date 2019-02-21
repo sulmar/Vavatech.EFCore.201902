@@ -28,8 +28,8 @@ namespace Vavatech.EFCore.DbServices.Configurations
                 .HasMaxLength(50)
                 .IsRequired();
 
-            var customers = customerFaker.Generate(100);
-            builder.HasData(customers);
+            //var customers = customerFaker.Generate(100);
+            //builder.HasData(customers);
         }
     }
 }

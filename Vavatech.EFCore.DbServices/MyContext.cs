@@ -18,8 +18,9 @@ namespace Vavatech.EFCore.DbServices
         public MyContext(DbContextOptions<MyContext> options)
             : base(options)
         {
-           // this.Database.EnsureDeleted();
-            this.Database.EnsureCreated();
+            //this.Database.EnsureDeleted();
+            // this.Database.EnsureCreated();
+            this.Database.Migrate();
         }
 
         // PM: Install-Package Microsoft.EntityFrameworkCore.SqlServer
