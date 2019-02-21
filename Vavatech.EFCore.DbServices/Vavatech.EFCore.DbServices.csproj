@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Vavatech.EFCore.FakeServices\Vavatech.EFCore.FakeServices.csproj" />
     <ProjectReference Include="..\Vavatech.EFCore.IServices\Vavatech.EFCore.IServices.csproj" />
   </ItemGroup>
 

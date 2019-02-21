@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Vavatech.EFCore.DbServices\Vavatech.EFCore.DbServices.csproj" />
+    <ProjectReference Include="..\Vavatech.EFCore.FakeServices\Vavatech.EFCore.FakeServices.csproj" />
     <ProjectReference Include="..\Vavatech.EFCore.IServices\Vavatech.EFCore.IServices.csproj" />
     <ProjectReference Include="..\Vavatech.EFCore.Models\Vavatech.EFCore.Models.csproj" />
   </ItemGroup>

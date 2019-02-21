@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Vavatech.EFCore.DbServices.Configurations;
 using Vavatech.EFCore.Models;
 
 namespace Vavatech.EFCore.DbServices
@@ -17,7 +18,8 @@ namespace Vavatech.EFCore.DbServices
         public MyContext(DbContextOptions<MyContext> options)
             : base(options)
         {
-
+           // this.Database.EnsureDeleted();
+            this.Database.EnsureCreated();
         }
 
         // PM: Install-Package Microsoft.EntityFrameworkCore.SqlServer
@@ -26,6 +28,37 @@ namespace Vavatech.EFCore.DbServices
             base.OnConfiguring(optionsBuilder);
 
             // optionsBuilder.UseSqlServer()
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // EF 6.0
+            // modelBuilder.Configurations.Add(new CustomerConfiguration());
+            
+            modelBuilder.ApplyConfiguration(new CustomerConfiguration(new FakeServices.CustomerFaker()));
+
+            //modelBuilder.Entity<Customer>()
+            //    .Property(p => p.FirstName)
+            //    .HasMaxLength(50);
+
+            //modelBuilder.Entity<Customer>()
+            //    .Property(p => p.LastName)
+            //    .HasMaxLength(50)
+            //    .IsRequired();
+
+            //modelBuilder.Entity<Item>()
+            //    .Property(p => p.Name)
+            //    .HasMaxLength(200)
+            //    .IsRequired();
+
+
+                
+
+            base.OnModelCreating(modelBuilder);
+
+            
+
+
         }
 
     }

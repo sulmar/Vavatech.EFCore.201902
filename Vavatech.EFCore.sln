@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.EFCore.ConsoleClient", "Vavatech.EFCore.ConsoleClient\Vavatech.EFCore.ConsoleClient.csproj", "{AB548B7D-1757-4ECF-BFB2-C32C6781D305}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vavatech.EFCore.ConsoleClient", "Vavatech.EFCore.ConsoleClient\Vavatech.EFCore.ConsoleClient.csproj", "{AB548B7D-1757-4ECF-BFB2-C32C6781D305}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.EFCore.Models", "Vavatech.EFCore.Models\Vavatech.EFCore.Models.csproj", "{3874A594-C157-48DC-B4E5-EEDB1DAB716C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vavatech.EFCore.Models", "Vavatech.EFCore.Models\Vavatech.EFCore.Models.csproj", "{3874A594-C157-48DC-B4E5-EEDB1DAB716C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.EFCore.IServices", "Vavatech.EFCore.IServices\Vavatech.EFCore.IServices.csproj", "{AF85D9F9-10E9-4360-A77F-3FD680FE8EA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vavatech.EFCore.IServices", "Vavatech.EFCore.IServices\Vavatech.EFCore.IServices.csproj", "{AF85D9F9-10E9-4360-A77F-3FD680FE8EA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.EFCore.DbServices", "Vavatech.EFCore.DbServices\Vavatech.EFCore.DbServices.csproj", "{3A70D9F1-5A78-41ED-AC6D-07F2D2E68AEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vavatech.EFCore.DbServices", "Vavatech.EFCore.DbServices\Vavatech.EFCore.DbServices.csproj", "{3A70D9F1-5A78-41ED-AC6D-07F2D2E68AEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.EFCore.WebService", "Vavatech.EFCore.WebService\Vavatech.EFCore.WebService.csproj", "{20677873-4986-4639-BBFB-8731CB97F7BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vavatech.EFCore.WebService", "Vavatech.EFCore.WebService\Vavatech.EFCore.WebService.csproj", "{20677873-4986-4639-BBFB-8731CB97F7BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vavatech.EFCore.FakeServices", "Vavatech.EFCore.FakeServices\Vavatech.EFCore.FakeServices.csproj", "{A1259C89-D87C-4BEC-A402-BABA4FA93745}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{20677873-4986-4639-BBFB-8731CB97F7BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20677873-4986-4639-BBFB-8731CB97F7BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20677873-4986-4639-BBFB-8731CB97F7BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1259C89-D87C-4BEC-A402-BABA4FA93745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1259C89-D87C-4BEC-A402-BABA4FA93745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1259C89-D87C-4BEC-A402-BABA4FA93745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1259C89-D87C-4BEC-A402-BABA4FA93745}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Vavatech.EFCore.DbServices;
+using Vavatech.EFCore.FakeServices;
 using Vavatech.EFCore.IServices;
 
 namespace Vavatech.EFCore.WebService
@@ -30,9 +31,13 @@ namespace Vavatech.EFCore.WebService
         {
             services.AddScoped<ICustomerService, DbCustomerService>();
 
-            string connectionstring = "....";
+            string connectionstring = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=MyEfCoreDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
             services.AddDbContext<MyContext>(options => options.UseSqlServer(connectionstring));
+
+            services.AddScoped<CustomerFaker>();
+           // services.AddScoped<ICustomerService, FakeCustomerService>();
+             services.AddScoped<ICustomerService, DbCustomerService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
