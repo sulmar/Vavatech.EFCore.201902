@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Vavatech.EFCore.IServices;
 using Vavatech.EFCore.Models;
 using Vavatech.EFCore.Models.SearchCritieras;
@@ -45,6 +46,16 @@ namespace Vavatech.EFCore.FakeServices
         }
 
         public IEnumerable<Customer> Get(CustomerSearchCriteria criteria)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Customer>> GetAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task AddAsync(Customer customer)
         {
             throw new NotImplementedException();
         }

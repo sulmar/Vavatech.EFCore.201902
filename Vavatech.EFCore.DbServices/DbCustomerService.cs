@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 using Vavatech.EFCore.IServices;
 using Vavatech.EFCore.Models;
 using Vavatech.EFCore.Models.SearchCritieras;
@@ -19,12 +21,29 @@ namespace Vavatech.EFCore.DbServices
 
         public void Add(Customer customer)
         {
-            throw new NotImplementedException();
+            Trace.WriteLine(context.Entry(customer).State);
+            
+            context.Customers.Add(customer);
+
+            Trace.WriteLine(context.Entry(customer).State);
+
+            context.SaveChanges();
+
+            Trace.WriteLine(context.Entry(customer).State);
+
+            customer.FirstName = "Ala";
+
+            Trace.WriteLine(context.Entry(customer).State);
+
+            context.SaveChanges();
+
+            Trace.WriteLine(context.Entry(customer).State);
+
         }
 
         public IEnumerable<Customer> Get()
         {
-            return context.Customers.ToList();
+            return context.Customers.AsNoTracking().ToList();
         }
 
         public Customer Get(int id)
@@ -34,12 +53,63 @@ namespace Vavatech.EFCore.DbServices
 
         public void Remove(int id)
         {
-            throw new NotImplementedException();
+            //  Customer customer = context.Customers.Find(id);
+
+            Customer customer = new Customer { Id = id };
+
+            // context.Customers.Attach(customer);            
+
+            Trace.WriteLine(context.Entry(customer).State);
+
+            context.Customers.Remove(customer);
+
+            Trace.WriteLine(context.Entry(customer).State);
+
+            context.SaveChanges();
+
+            Trace.WriteLine(context.Entry(customer).State);
         }
 
         public void Update(Customer customer)
         {
-            throw new NotImplementedException();
+
+            //context.Customers.Update(customer);
+
+            //context.SaveChanges();
+
+
+            //Trace.WriteLine(context.Entry(customer).State);
+
+            //context.Customers.Attach(customer);
+
+            //Trace.WriteLine(context.Entry(customer).State);
+
+            //context.Entry(customer).State = EntityState.Modified;
+
+            //Trace.WriteLine(context.Entry(customer).State);
+
+            //context.SaveChanges();
+
+            //Trace.WriteLine(context.Entry(customer).State);
+
+            Trace.WriteLine(context.Entry(customer).State);
+            Customer customerDb = context.Customers.Find(customer.Id);
+
+            Trace.WriteLine(context.Entry(customerDb).State);
+
+            customerDb.FirstName = customer.FirstName;
+            customerDb.LastName = customer.LastName;
+
+            foreach (var property in context.Entry(customerDb).Properties)
+            {
+                Trace.WriteLine($"{property.Metadata.Name} {property.IsModified} {property.OriginalValue} -> {property.CurrentValue}");
+            }
+
+            Trace.WriteLine(context.Entry(customerDb).State);
+
+            context.SaveChanges();
+
+            Trace.WriteLine(context.Entry(customerDb).State);
         }
 
         public IEnumerable<Customer> Get(string lastname)
@@ -72,14 +142,20 @@ namespace Vavatech.EFCore.DbServices
 
             var customers = query.ToList();
 
-                    
-
-
-
-
-
             return customers;
 
+        }
+
+        public async Task<IEnumerable<Customer>> GetAsync()
+        {
+            return await context.Customers.ToListAsync();
+        }
+
+        public async Task AddAsync(Customer customer)
+        {
+            await context.Customers.AddAsync(customer);
+
+            await context.SaveChangesAsync();
         }
     }
 }

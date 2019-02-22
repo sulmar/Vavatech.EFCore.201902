@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Vavatech.EFCore.Models;
 using Vavatech.EFCore.Models.SearchCritieras;
 
 namespace Vavatech.EFCore.IServices
 {
+    
+
     public interface ICustomerService
     {
         IEnumerable<Customer> Get();
@@ -14,5 +17,10 @@ namespace Vavatech.EFCore.IServices
         void Add(Customer customer);
         void Update(Customer customer);
         void Remove(int id);
+
+        Task<IEnumerable<Customer>> GetAsync();
+        Task AddAsync(Customer customer);
+       
+
     }
 }

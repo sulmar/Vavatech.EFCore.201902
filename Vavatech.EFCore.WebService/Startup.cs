@@ -39,6 +39,8 @@ namespace Vavatech.EFCore.WebService
            // services.AddScoped<ICustomerService, FakeCustomerService>();
              services.AddScoped<ICustomerService, DbCustomerService>();
 
+            services.AddScoped<ISenderService, SmsSenderService>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

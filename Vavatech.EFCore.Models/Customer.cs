@@ -8,6 +8,8 @@
         public string Pesel { get; set; }
         public bool IsDeleted { get; set; }
         public decimal Salary { get; set; }
+
+        public byte[] RowVersion { get; set; }
     }
 
     

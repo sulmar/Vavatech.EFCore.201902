@@ -21,12 +21,21 @@ namespace Vavatech.EFCore.DbServices.Configurations
         {
             builder
                .Property(p => p.FirstName)
-               .HasMaxLength(50);
+               .HasMaxLength(50)
+               .IsConcurrencyToken();
 
             builder
                 .Property(p => p.LastName)
                 .HasMaxLength(50)
                 .IsRequired();
+
+            builder
+                .Property(p => p.RowVersion)
+                .IsRowVersion()
+                .IsConcurrencyToken();
+
+
+            
 
             //var customers = customerFaker.Generate(100);
             //builder.HasData(customers);
